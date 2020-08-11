@@ -19,6 +19,6 @@ R version up of: 4.0.2
 The functions available in the package will be ready for use.
 
 ### Acknowledgments
-I thank Professor Adriano Andrade for all the guidance and dedication to this project. 
+I thank professor Adriano Andrade for all the guidance and dedication to this project. 
 
 I also thank the members of Center for Innovation and Technological Evaluation in Health and all the volunteers and collaborators of the Triangulo Parkinson Association.
