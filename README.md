@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 R version up of: 4.0.2 
 
 #### Installing
-1 - Download the pendrawpac_1.1.3.tar file
+1 - Download the pendrawpac_1.2.3.tar file in Re
 
 2 - Abra uma sessão do Rstudio 
 
