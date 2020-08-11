@@ -8,15 +8,15 @@ These instructions will get you a copy of the project up and running on your loc
 R version up of: 4.0.2 
 
 #### Installing
-1 - Download the pendrawpac_1.2.3.tar file in "Releases" section 
+1 - Download the pendrawpac_1.2.3.tar file in releases section. 
 
-2 - Abra uma sessão do Rstudio 
+2 - Abra uma sessão do Rstudio. 
 
 3 - In the "Packages" window select to install from a file (.zip; tar; gz) and select the downloaded file.
 
 4 - In your work script insert: library("pendrawpac").
 
-The functions available in the package will be ready for use
+The functions available in the package will be ready for use.
 
 ### Acknowledgments
 I thank Professor Adriano Andrade for all the guidance and dedication to this project. 
