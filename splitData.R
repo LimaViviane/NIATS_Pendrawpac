@@ -1,5 +1,4 @@
 
-
 #' @title Split the sign into two tasks: contour and free draw.
 #' 
 #' @name splitData
@@ -21,6 +20,7 @@
 #' @author Viviane Lima
 #'
 #' @export
+
 splitData <- function(df) 
 {
   dados <- df
