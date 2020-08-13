@@ -7,7 +7,7 @@
 #' @description A function that applies the ACF and shows the corresponding correlogram.
 #'              In addition, it calculates the area on the curve and compares the estimated
 #'              coorelogram with the correlogram of the standard, sinusoidal or spiral design,
-#'              and returns the mean difference between the maximum and minimum of the two graphs.  
+#'              and returns the mean difference between the maximum and minimum of the two graphs.   
 #'     
 #' @param dt dataframe resulting from selecAxis.
 #' 

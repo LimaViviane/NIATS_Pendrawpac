@@ -31,7 +31,7 @@ removeSpikes <- function(eixo)
   IQR <- Q3 - Q1   # distancia interquartil
   
   
-  h <- 0.5 * IQR # limiar para detectar os picos indesejados
+  h <- 0.5 * IQR # limiar para detectar os picos indesejados.
   
   UIF <- as.numeric(Q3 + h) 
   
