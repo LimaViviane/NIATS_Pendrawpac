@@ -30,7 +30,7 @@ ccf_function <- function(df, dados, curva)
     k <- 1
     j <- 1
     m <- 1
-    
+
     maximos <- NA
     maximos2 <- NA
     erro <- NA

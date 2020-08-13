@@ -24,7 +24,7 @@
 smoothing <- function(df)  
 {
   dfsinal <- df
-  
+
   ### Acelerometro 1: X ###
   
   x1_loessMod15 <- loess(dfsinal$X.A1.X. ~ dfsinal$X.Time., data=dfsinal, span=0.15) # 15% smoothing span
