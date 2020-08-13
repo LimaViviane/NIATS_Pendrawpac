@@ -1,31 +1,25 @@
-#####--------------- removeTrend---------------#####
-#
-# -----------------------------------------------------
-# Author: Viviane Lima
-# Contact e-mail: viviane.engbiomedical@gmail.com
-# Address:  Centre for Innovation and Technology Assessment in Health, 
-#           Faculty of Electrical Engineering, Federal University of Uberlândia, 
-#           Uberlândia, Brazil
-# -----------------------------------------------------
-#
-# Removes linear and non-linear trends. 
-#
-# Description:
-#       A function that receives a signal collected through TREMSEN and removes
-#       linear and non-linear trends from each axis of the accelerometers. Although
-#       the data collected with TREMSEN have the magnetorometer and gyroscope sensors,
-#       this function is configured to remove trends only from the signals from accelerometers 1 and 2.
-#
-# Input:
-#       df: dataframe resulting from splitData.
-#
-# Output:
-#       Linear detrended dataframe. 
-#
-# Example os use: 
-#       df.removeTrend <- removeTrend(df)
-     
 
+#' @title Removes linear and non-linear trends. 
+#' 
+#' @name removeTrend
+#'
+#' @description A function that receives a signal collected through TREMSEN and removes
+#'               linear and non-linear trends from each axis of the accelerometers. 
+#'
+#' @param df A dataframe.
+#'
+#' @details Although the data collected with TREMSEN have the magnetorometer and gyroscope sensors,
+#'          this function is configured to remove trends only from the signals from accelerometers 1 and 2.
+#'          
+#' @return A dataframe containing the signals from accelerometers 1 and 2 without linear and non-linear trends. 
+#' 
+#' @examples \dontrun{ df.removeTrend <- removeTrend(df)}
+#' 
+#' @importFrom stats loess predict
+#'
+#' @author Viviane Lima
+#' 
+#' @export
 removeTrend <- function(df) 
 {
   dfsinal <- df
@@ -74,4 +68,3 @@ removeTrend <- function(df)
   
   return(dfsinal)
 }
-

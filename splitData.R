@@ -1,32 +1,26 @@
-#####--------------- splitData---------------#####
-#
-# -----------------------------------------------------
-# Author: Viviane Lima
-# Contact e-mail: viviane.engbiomedical@gmail.com
-# Address:  Centre for Innovation and Technology Assessment in Health, 
-#           Faculty of Electrical Engineering, Federal University of Uberlândia, 
-#           Uberlândia, Brazil
-# -----------------------------------------------------
-#
-# Split the sign into two tasks: contour and free draw.
-# 
-# Description:
-#       A function that takes the data collected by TREMSEN and
-#       separates it into two files: one containing the task of
-#       contouring the drawing and the other of drawing without
-#       contour. The separate data has all the axes of the inertial sensors.
-#     
-# Input:
-#       df:  dataframe resulting from LoadTREMSENFile.
-#
-# Output:
-#       A list containing two signs: one with the task of contouring
-#       the drawing and another with the sign of the freehand drawing.
-# 
-# Example of use:
-#         df.splitData <- splitData(df) 
-#
-#
+
+
+#' @title Split the sign into two tasks: contour and free draw.
+#' 
+#' @name splitData
+#'
+#' @description A function that takes the data collected by TREMSEN and
+#'              separates it into two files: one containing the task of
+#'              contouring the drawing and the other of drawing without
+#'              contour. The separate data has all the axes of the inertial sensors.
+#'     
+#' @usage splitData(df)
+#'     
+#' @param df dataframe resulting from LoadTREMSENFile.
+#'
+#' @return A list containing two signs: one with the task of contouring
+#'         the drawing and another with the sign of the freehand drawing.
+#'         
+#' @examples  \dontrun{ df.splitData <- splitData(df)}
+#' 
+#' @author Viviane Lima
+#'
+#' @export
 splitData <- function(df) 
 {
   dados <- df
@@ -61,4 +55,3 @@ splitData <- function(df)
   
   return(list(contorno = contorno, DesLivre = DesLivre))
 }
-

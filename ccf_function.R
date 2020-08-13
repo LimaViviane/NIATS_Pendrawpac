@@ -1,36 +1,3 @@
-#####--------------- ccf_function ---------------#####
-#
-# -----------------------------------------------------
-# Author: Viviane Lima
-# Contact e-mail: viviane.engbiomedical@gmail.com
-# Address:  Centre for Innovation and Technology Assessment in Health, 
-#           Faculty of Electrical Engineering, Federal University of Uberlândia, 
-#           Uberlândia, Brazil
-# -----------------------------------------------------
-#
-# Apply the cross correlation function (CCF).
-# 
-# Description:
-#       A function used by SelectAxis to select the axis that
-#       best describes the movement performed. Apply the cross
-#       correlation function (CCF) between the input data and T
-#       he curve corresponding to the sinusoid or spiral draw.
-#      
-# Input:
-#       df:  dataframe resulting from LoadTREMSENFile.
-#
-#       curva:  A character that represents the type of the drawing. 'S' for sinusoid and 'E' for spiral
-# 
-#       dados Time serie corresponding to one of the axes of the accelerometer.
-#      
-# Output:
-#       Returns the average of the differences between the maximum and minimum values
-#       of the cross correlation of the input signal and the standard curve in comparison
-#       with the maximum and minimum points of the autocorrelation function of the standard curve.
-#
- 
-
-
 ccf_function <- function(df, dados, curva)
 {
   dfsinal <- df
@@ -149,3 +116,21 @@ ccf_function <- function(df, dados, curva)
   }
   
 }
+#' @title Apply the cross correlation function (CCF) between the input data and the curve corresponding to the sinusoid or spiral draw.
+#' 
+#' @name ccf_function 
+#'
+#' @description A function used by SelectAxis to select the axis that best describes the movement performed.
+#'     
+#' @param df dataframe resulting from LoadTREMSENFile.
+#'
+#' @param curva A character that represents the type of the drawing. 'S' for sinusoid and 'E' for spiral
+#' 
+#' @param dados Time serie corresponding to one of the axes of the accelerometer.
+#'      
+#' @return Returns the average of the differences between the maximum and minimum values
+#'         of the cross correlation of the input signal and the standard curve in comparison
+#'         with the maximum and minimum points of the autocorrelation function of the standard curve.
+#'
+#' @author Viviane Lima
+#'

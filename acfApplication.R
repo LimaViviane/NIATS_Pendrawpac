@@ -1,42 +1,37 @@
-#####--------------- acfApplication---------------#####
-#
-# -----------------------------------------------------
-# Author: Viviane Lima
-# Contact e-mail: viviane.engbiomedical@gmail.com
-# Address:  Centre for Innovation and Technology Assessment in Health, 
-#           Faculty of Electrical Engineering, Federal University of Uberlândia, 
-#           Uberlândia, Brazil
-# -----------------------------------------------------
-#
-# Application and analysis of the Autocorrelation function (ACF).
-#
-# Descripition:
-#       A function that applies the ACF and shows the corresponding correlogram.
-#       In addition, it calculates the area on the curve and compares the estimated
-#       coorelogram with the correlogram of the standard, sinusoidal or spiral design,
-#       and returns the mean difference between the maximum and minimum of the two graphs.  
-#     
-# Input:
-#       dt: dataframe resulting from selecAxis.
-# 
-#       curve: Character that indicates the type of curve used in the task.'S' for sinusoid or 'E' for spiral.
-#           
-# Output:
-#       Returns a list containing the average of the difference between the maximum and minimum points of
-#       the ACF graph of the standard figure and the ACF graph of the input time series; and also the total
-#       area over the ACF curve of the time series. 
-#  
-# Example os use: 
-#       df.acfApplication <- acfApplication(dt, curve = 'S') 
-#     or 
-#       df.acfApplication <- acfApplication(dt, curve = 'E')
-#
 
 
+#' @title Application and analysis of the Autocorrelation function (ACF).
+#' 
+#' @name acfApplication
+#'
+#' @description A function that applies the ACF and shows the corresponding correlogram.
+#'              In addition, it calculates the area on the curve and compares the estimated
+#'              coorelogram with the correlogram of the standard, sinusoidal or spiral design,
+#'              and returns the mean difference between the maximum and minimum of the two graphs.  
+#'     
+#' @param dt dataframe resulting from selecAxis.
+#' 
+#' @param curve Character that indicates the type of curve used in the task.'S' for sinusoid or 'E' for spiral.
+#'           
+#' @return Returns a list containing the average of the difference between the maximum and minimum points of
+#'         the ACF graph of the standard figure and the ACF graph of the input time series; and also the total
+#'         area over the ACF curve of the time series. 
+#'         
+#' @examples 
+#' \dontrun{df.acfApplication <- acfApplication(dt, curve = 'S')
+#'           df.acfApplication <- acfApplication(dt, curve = 'E')}   
+#'         
+#' @author Viviane Lima
+#'
+#'  
+#' @importFrom stats acf ccf
+#' @importFrom pracma trapz
+#'  
+#' @export
 
 acfApplication <- function(dt, curve){
   
-  dplotfilt1 <- acf(dt , lag.max = length(dados),
+  dplotfilt1 <- acf(dt , lag.max = length(dt),
                     type = c("correlation"),
                     plot = TRUE)
   
@@ -95,7 +90,7 @@ acfApplication <- function(dt, curve){
     media_vmm <- mean(c(abs(Ep1), abs(Ep2), abs(Ep3), abs(Ev1), abs(Ev2), abs(Ev3), abs(Ev4)))
     
     modulo_y1 <- abs(dplotfilt1[[1]])
-   
+    
     AreaTotal1 <- trapz(dplotfilt1[[4]], modulo_y1)
     
     return(list(Media_Vmm = media_vmm, Area_total = AreaTotal1))
@@ -146,7 +141,7 @@ acfApplication <- function(dt, curve){
     
     Ep1 <- max_min[2] - y[pos_vmm[2]]
     Ep2 <- max_min[4] - y[pos_vmm[4]]
-   
+    
     Ev1 <- max_min[1] - y[pos_vmm[1]]
     Ev2 <- max_min[3] - y[pos_vmm[3]]
     Ev3 <- max_min[5] - y[pos_vmm[5]]
