@@ -20,7 +20,6 @@
 #' @author Viviane Lima
 #' 
 #' @export
-#' 
 removeTrend <- function(df) 
 {
   dfsinal <- df
