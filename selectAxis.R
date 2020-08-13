@@ -22,7 +22,7 @@
 #'
 #' @export
 
-selectAxis <- function(df, curve) #Utiliza os resultados da funcao "Ccf_function" para selecionar o melhor eixo 
+selectAxis <- function(df, curve) #Utiliza os resultados da funcao "Ccf_function" para selecionar o melhor eixo. 
 {
   dfsinal <- df
   tipo <- curve
