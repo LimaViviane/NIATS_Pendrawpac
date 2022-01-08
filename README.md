@@ -10,7 +10,7 @@ R version up of: 4.0.2
 #### Installing
 1 - Download the pendrawpac_1.2.3.tar file in releases section. 
 
-2 - Abra uma sessão do Rstudio. 
+2 - Open an Rstudio session. 
 
 3 - In the "Packages" window select to install from a file (.zip; tar; gz) and select the downloaded file.
 
